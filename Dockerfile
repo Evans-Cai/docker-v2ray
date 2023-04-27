@@ -6,7 +6,7 @@
 # https://github.com/v2fly/domain-list-community
 
 FROM alpine:latest
-LABEL maintainer="Teddysun <i@teddysun.com>"
+LABEL maintainer="caiwendi <caiwendi@gmail.com>"
 
 WORKDIR /root
 COPY v2ray.sh /root/v2ray.sh
@@ -22,5 +22,9 @@ RUN set -ex \
 	&& wget -O /usr/share/v2ray/geoip.dat https://github.com/v2fly/geoip/releases/latest/download/geoip.dat
 
 VOLUME /etc/v2ray
-ENV TZ=Asia/Shanghai
+
+ENV TZ=""
+
+EXPOSE 9000
+
 CMD [ "/usr/bin/v2ray", "run", "-config", "/etc/v2ray/config.json" ]
