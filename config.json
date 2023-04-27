@@ -2,24 +2,26 @@
   "log": {
     "loglevel": "warning"
   },
-  "inbounds": [{
-    "protocol": "vmess",
-    "port": 9000,
-    "settings": {
-      "clients": [
-        {
-          "id": "4d17977d-71b0-57de-8b81-1dfd44f75df8",
-          "alterId": 64
+  "inbounds": [
+    {
+      "protocol": "vmess",
+      "port": 9000,
+      "settings": {
+        "clients": [
+          {
+            "id": "4d17977d-71b0-57de-8b81-1dfd44f75df8",
+            "alterId": 64
+          }
+        ]
+      },
+      "streamSettings": {
+        "network": "ws",
+        "wsSettings": {
+          "path": "/ray"
         }
-      ]
-    },
-    "streamSettings": {
-      "network": "ws",
-      "wsSettings": {
-        "path": "/ray"
       }
     }
-  }],
+  ],
   "outbounds": [
     {
       "protocol": "freedom",
